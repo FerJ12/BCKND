@@ -13,6 +13,14 @@ class ProductManager {
     getProduct() {
         return this.products;
     }
+
+    getProductById(id){
+        if(!this.products.find((producto) => producto.id === id)){
+            console.log("Not Found")
+        } else{
+            console.log("Exist")
+        }
+    }
 }
 
 const productos = new ProductManager 
@@ -23,3 +31,5 @@ productos.addProduct('titulo1', 'descripcion1', 1000, 'imagen1', 'abc123', 5);
 productos.addProduct('titulo2', 'descripcion2', 2000, 'imagen2', 'abc124', 5);
 
 console.log(productos.getProduct());
+
+productos.getProductById(4)
