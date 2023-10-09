@@ -6,6 +6,13 @@ class ProductManager {
     static id = 0
 
     addProduct(title, descrption, price, image, code, stock) {
+        for(let i = 0; i < this.products.length; i++) {
+            if (this.products[i].code === code) {
+                console.log(`El codigo ${code} esta repetido`);
+                break;
+            }
+        }
+
         ProductManager.id++
         this.products.push({ title, descrption, price, image, code, stock, id:ProductManager.id });
     }
