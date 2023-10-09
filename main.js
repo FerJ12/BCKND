@@ -14,14 +14,14 @@ class ProductManager {
         return this.products;
     }
 
-    getProductById(id){
-        if(!this.products.find((producto) => producto.id === id)){
-            console.log("Not Found")
-        } else{
-            console.log("Exist")
+    existe(id) {
+        return this.products.find((producto) => producto.id === id);
+    }
+
+    getProductById(id) {
+        !this.existe(id) ? console.log("Not Found") : console.log(this.existe(id));
         }
     }
-}
 
 const productos = new ProductManager 
 
@@ -32,4 +32,4 @@ productos.addProduct('titulo2', 'descripcion2', 2000, 'imagen2', 'abc124', 5);
 
 console.log(productos.getProduct());
 
-productos.getProductById(4)
+productos.getProductById(3)
